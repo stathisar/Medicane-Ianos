@@ -1,2 +1,3 @@
-Current repository is generated for adding about 100 python scripts, fine-tuned/trained models, and sample data regarding my recent research regarding Multiple Social Media Sources and Medicane Ianos.
-The scripts and related material will be uploaded upon publication.
+Current repository is generated for adding about 100 python scripts, which were created during current research. Those script include preprocessing, fine-tuning/training models,for all the related modalities. The repository also contains various model logs, figures and sample data for experimenting.
+
+The repository will be public upon final acceptance.
