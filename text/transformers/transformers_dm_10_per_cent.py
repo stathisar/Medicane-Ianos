@@ -63,7 +63,7 @@ test_loader = DataLoader(test_dataset, batch_size=128, shuffle=False)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 optimizer = AdamW(model.parameters(), lr=5e-5)
-epochs = 40
+epochs = 100
 loss_stats = pd.DataFrame()
 loss_stats['epoch'] = []
 loss_stats['train_loss'] = []
