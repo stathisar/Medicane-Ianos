@@ -5,8 +5,8 @@ from typing import Optional
 from datetime import datetime
 
 # Add the corresponding API keys
-API_KEY = 'f0e5e766faf72869d9ec887e882e5b55'
-API_SECRET = '6117f46de7ed60fb'
+API_KEY = 'ADD_CORRESPONDING_API_KEY'
+API_SECRET = 'ADD_CORRESPONDING_API_SECRET'
 
 # Creation of Flickr API client
 flickr = flickrapi.FlickrAPI(API_KEY, API_SECRET, format='parsed-json')
