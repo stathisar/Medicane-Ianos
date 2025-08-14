@@ -28,7 +28,7 @@ def from_unix_time(timestamp_str):
 
 #translate
 for i in range(0,len(df)):
-	no_urls = remove_urls(df.loc[i, 'text'].replace('\n',''))
+	no_urls = remove_urls(str(df.loc[i, 'text']).replace('\n',''))
 	df.loc[i, 'postedTime'] = from_unix_time(df.loc[i, 'timestamp'])
 	try:
 		lang = detect(no_urls)
