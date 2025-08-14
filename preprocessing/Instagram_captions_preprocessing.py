@@ -3,8 +3,7 @@ import re
 import emoji
 from langdetect import detect
 from translatepy import Translator
-from datetime import datetime
-
+import datetime
 
 df = pd.read_csv('/media/stathis/StathisUSB/final_classification_march_9/text_data/Instagram_captions/Instagram_captions.csv')
 df['cleanedCaption'] = ''
@@ -30,7 +29,7 @@ def from_unix_time(timestamp_str):
 #translate
 for i in range(0,len(df)):
 	no_urls = remove_urls(df.loc[i, 'text'].replace('\n',''))
-	df.loc[i, 'postedTime'] = from_unix_time(df.loc[i, 'unixtime'])
+	df.loc[i, 'postedTime'] = from_unix_time(df.loc[i, 'timestamp'])
 	try:
 		lang = detect(no_urls)
 	except:
