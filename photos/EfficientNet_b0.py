@@ -25,7 +25,7 @@ transform = transforms.Compose([
 ])
 
 # Import training pics
-dataset = CustomImageFolder(root='/media/stathis/StathisUSB/final_classification_march_9/training_data/vgg/train', transform=transform)
+dataset = CustomImageFolder(root='/home/stathis/Desktop/Deucalion 2.1/train', transform=transform)
 # Estimate training and validation sizes
 train_size = int(0.9 * len(dataset))
 val_size = len(dataset) - train_size
@@ -48,16 +48,16 @@ efficientnetb0 = models.efficientnet_b0(pretrained=True)
 for param in efficientnetb0.parameters():
     param.requires_grad = False
     # Αντικατάστησε την τελική ταξινόμηση
-    num_ftrs = efficientnetb0.classifier[1].in_features
+    num_ftrs = efficientnetb0.classifier[0].in_features
     efficientnetb0.classifier = nn.Sequential(
-    nn.Linear(num_ftrs, 1)#,
-  #  nn.Sigmoid()
+    nn.Linear(num_ftrs, 1),
+    nn.Sigmoid()
     )
     
     
 device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
 efficientnetb0=efficientnetb0.to(device)
-criterion = nn.BCELoss()
+criterion = nn.BCEWithLogitsLoss()
 optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, efficientnetb0.parameters()), lr=0.001)
 
 val_last = 0
@@ -106,7 +106,7 @@ for epoch in range(100):  # 100 epochs
 		avg_val_loss = val_loss / len(val_loader)
 		print(f'Validation Accuracy: {val_accuracy:.2f}%')
 	if abs(train_accuracy - val_accuracy) < 10 and val_accuracy > val_last:
-		torch.save(efficientnetb0, '/media/stathis/StathisUSB/final_classification_march_9/models/efficientnetb0/efficientnetb0_least_overfitting_iter1.pth')
+		torch.save(efficientnetb0, '/home/stathis/Desktop/Deucalion 2.1/efficientnetb0/efficientnetb0_less_overfitting.pth')
 		print(f'Condition is True, model is saved. Validation Accuracy = {val_accuracy:}%, Train Accuracy = {train_accuracy}') 
 	else: 
 		print('Condition not met, model is not saved')
@@ -127,9 +127,9 @@ for epoch in range(100):  # 100 epochs
 
 
 #save metrics
-metrics.to_csv('/media/stathis/StathisUSB/final_classification_march_9/models/efficientnetb0/efficientnetb0_metrics_apr13.csv')
+metrics.to_csv('/home/stathis/Desktop/Deucalion 2.1/efficientnetb0/efficientnetb0_metrics_apr13.csv')
 #save model
-torch.save(efficientnetb0, '/media/stathis/StathisUSB/final_classification_march_9/models/efficientnetb0/efficientnetb0_finetuned_last_version__not_best_apr_13.pth')
+torch.save(efficientnetb0, '/home/stathis/Desktop/Deucalion 2.1/efficientnetb0/efficientnetb0_finetuned_last_epoch__not_best_apr_13.pth')
 #=========================================================
 #model = torch.load('/media/stathis/StathisUSB/final_classification_march_9/models/vgg/vgg_best_finetuned.pth')
 #VALIDATION
