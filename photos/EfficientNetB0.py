@@ -43,7 +43,7 @@ print(f"Validation samples: {len(val_loader.dataset)}")
 #==========================================================================
 #TRAIN
 # Import original efficientnetB0 model with pretrained weights
-efficientnetb0 = models.efficientnetb0(pretrained=True)
+efficientnetb0 = models.efficientnet_b0(pretrained=True)
 
 for param in efficientnetb0.parameters():
     param.requires_grad = False
