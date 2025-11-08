@@ -1,3 +1,4 @@
-Current repository is generated for adding about 100 python scripts, which were created during current research. Those script include preprocessing, fine-tuning/training models,for all the related modalities. The repository also contains various model logs, figures and sample data for experimenting.
+Current repository includes various scripts, performance metrics and sample checks regarding the research published in OAJAST of OAST regaring with title:
 
-The repository will be public upon final acceptance.
+
+Exploiting multiple social media sources and multiple modalities for flood management: The case study of the medicane Ianos.
