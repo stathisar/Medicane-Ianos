@@ -15,6 +15,6 @@ Updates with some more privacy friendly data proofs are expected. Keep tuned.
 sgarapostathis@alittlemap-research.gr
 
 
-December 11: Note: Figure 19 has daily time intervals, that start counting from 0. So in case someone wants to adjust it to dates, then he should just add 1 to find the exace date. The spreadsheet and the script are available in the plots folder.
+December 11: Note: Figure 19 has daily time intervals, that start counting from 0. So in case someone wants to find the actual date, then he should just add 1 to find the exact date. The spreadsheet and the script are available in the plots folder.
 
 
