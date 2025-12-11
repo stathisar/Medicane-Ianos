@@ -15,8 +15,6 @@ Updates with some more privacy friendly data proofs are expected. Keep tuned.
 sgarapostathis@alittlemap-research.gr
 
 
-December 11: Important Note: MatPlotLib seems to be using by default some kind of smoothing when generates the line plots. As a result the Figure 19 of the Article has some kind of smoothing that is visible in Flickr. Since Flickr dataset started from 5th of September 2020 and in the plot the actual start is displayed as little earlier. There is the spreadsheet available and the script, in the plots folder. Upon re-execution matplotlib library still generates that figure with the same smooth (there is the attached image in the folder). It will be checked a little more.
-
-Raised a related issue to find out what's going on: https://github.com/matplotlib/matplotlib/issues/30837
+December 11: Note: Figure 19 has daily time intervals, that start counting from 0. So in case someone wants to adjust it to dates, then he should just add 1 to find the exace date. The spreadsheet and the script are available in the plots folder.
 
 
