@@ -13,3 +13,8 @@ Updates with some more privacy friendly data proofs are expected. Keep tuned.
 
 
 sgarapostathis@alittlemap-research.gr
+
+
+December 11: Important Note: MatPlotLib seems to be using be default some kind of smoothing when generates the line plots. As a result the Figure 19 has some kind smoothing that is visible in Flickr. Since Flickr data start from 5th of September and in the plot the actual start is displayed as little earlier. While there is the spreadsheet used available and the script, upon re-execution matplotlib library still generates the figure with that smooth. Will be checked a little more.
+
+
